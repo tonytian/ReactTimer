@@ -12,5 +12,12 @@ describe('Timer', () => {
     it('should exist', () => {
         expect(Timer).toExist();
     }); 
+
+    it('render', () => {
+        var timer = TestUtils.renderIntoDocument(<Timer />);
+        var $el = $(ReactDOM.findDOMNode(timer));
+        var $controls = $el.find('.controls'); 
+        expect($controls).toExist();
+    })
 }); 
 
